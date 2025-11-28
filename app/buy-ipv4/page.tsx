@@ -37,9 +37,6 @@ export default function BuyIPv4Page() {
                 <a href="/lease-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
                   Lease IPv4
                 </a>
-                <a href="/sponsor-asn" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Sponsor ASN
-                </a>
               </div>
             </div>
             <div className="relative group">
@@ -121,10 +118,10 @@ export default function BuyIPv4Page() {
         <section className="mx-auto mt-16 flex max-w-6xl flex-col gap-12 px-4 md:flex-row md:items-center lg:px-0">
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-semibold text-slate-900">
-              Let IPv4Mall Simplify Your IPv4 Address Needs
+              Let IPv4Go Simplify Your IPv4 Address Needs
             </h2>
             <p className="text-sm leading-relaxed text-slate-600">
-              The growing demand for IPv4 addresses has made it harder than ever to secure clean, routable space. IPv4Mall helps operators, cloud providers, and enterprises source address blocks without the uncertainty of informal channels.
+              The growing demand for IPv4 addresses has made it harder than ever to secure clean, routable space. IPv4Go helps operators, cloud providers, and enterprises source address blocks without the uncertainty of informal channels.
             </p>
             <p className="text-sm leading-relaxed text-slate-600">
               Whether you need a single /24 or multiple /16s, we coordinate every stage of the transactionfrom matching supply and demand, to escrow, to RIR submissionso you can stay focused on running your network.
@@ -165,10 +162,10 @@ export default function BuyIPv4Page() {
           </div>
           <div className="order-1 flex-1 space-y-4 md:order-2">
             <h2 className="text-2xl font-semibold text-slate-900">
-              Why Buy IPv4 Addresses From Us?
+              Why Buy IPv4 Addresses From IPv4Go?
             </h2>
             <p className="text-sm leading-relaxed text-slate-600">
-              IPv4Mall brings together vetted sellers, transparent pricing, and a transaction framework that has been refined across many successful transfers. We focus on due diligence and reputation so that you receive address space you can rely on.
+              IPv4Go brings together vetted sellers, transparent pricing, and a transaction framework that has been refined across many successful transfers. We focus on due diligence and reputation so that you receive address space you can rely on.
             </p>
             <p className="text-sm leading-relaxed text-slate-600">
               Our team coordinates legal review, escrow, and RIR documentation while keeping you updated at every step. You gain predictable timelines and clear expectations instead of surprises.
@@ -179,7 +176,7 @@ export default function BuyIPv4Page() {
         <section className="mx-auto mt-16 flex max-w-6xl flex-col gap-12 px-4 md:flex-row md:items-center lg:px-0">
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-semibold text-slate-900">
-              Why Choose IPv4Mall?
+              Why Choose ipv4GO?
             </h2>
             <p className="text-sm leading-relaxed text-slate-600">
               Many brokers simply introduce buyers and sellers and step aside. We stay engaged from the first conversation through final RIR approval, helping you navigate policy, routing, and operational considerations.

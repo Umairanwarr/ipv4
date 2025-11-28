@@ -37,9 +37,6 @@ export default function Home() {
                 <a href="/lease-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
                   Lease IPv4
                 </a>
-                <a href="/sponsor-asn" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Sponsor ASN
-                </a>
               </div>
             </div>
             <div className="relative group">
@@ -487,11 +484,11 @@ export default function Home() {
               <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-red-600 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">
                 IP
               </div>
-              <span className="text-sm font-semibold">IPv4 Brokerage</span>
+              <span className="text-sm font-semibold">IPv4Go</span>
             </div>
             <p className="max-w-sm text-xs text-slate-400">
-              A dedicated desk helping buyers, sellers, and lessors close
-              compliant IPv4 transactions across the globe.
+              A dedicated IPv4 brokerage desk helping buyers, sellers, and lessors
+              close compliant IPv4 transactions across the globe.
             </p>
           </div>
           <div className="grid flex-1 gap-8 text-xs sm:grid-cols-3">
@@ -503,42 +500,69 @@ export default function Home() {
                 <a href="#hero" className="block hover:text-white">
                   Overview
                 </a>
-                <a href="#services" className="block hover:text-white">
-                  Services
+                <a href="/about" className="block hover:text-white">
+                  About us
                 </a>
-                <a href="#how" className="block hover:text-white">
-                  How it works
+                <a href="/buy-ipv4" className="block hover:text-white">
+                  Buy IPv4
                 </a>
-                <a href="#blog" className="block hover:text-white">
-                  Blog
+                <a href="/sell-ipv4" className="block hover:text-white">
+                  Sell IPv4
+                </a>
+                <a href="/lease-ipv4" className="block hover:text-white">
+                  Lease IPv4
+                </a>
+                <a href="/contact" className="block hover:text-white">
+                  Contact
                 </a>
               </div>
             </div>
             <div className="space-y-3">
               <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-                Company
+                RIR
               </h3>
               <div className="space-y-2">
-                <span className="block text-slate-400">About</span>
-                <span className="block text-slate-400">Security</span>
-                <span className="block text-slate-400">Careers</span>
+                <a href="/buy-afrinic-ipv4" className="block hover:text-white">
+                  Buy AFRINIC IPv4
+                </a>
+                <a href="/buy-apnic-ipv4" className="block hover:text-white">
+                  Buy APNIC IPv4
+                </a>
+                <a href="/buy-arin-ipv4" className="block hover:text-white">
+                  Buy ARIN IPv4
+                </a>
+                <a href="/buy-lacnic-ipv4" className="block hover:text-white">
+                  Buy LACNIC IPv4
+                </a>
+                <a href="/buy-ripe-ipv4" className="block hover:text-white">
+                  Buy RIPE IPv4
+                </a>
               </div>
             </div>
             <div className="space-y-3">
               <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-                Contact
+                Process
               </h3>
               <div className="space-y-2 text-slate-400">
-                <p>brokerage@example.com</p>
-                <p>+1 (555) 555 0000</p>
-                <p>Mon–Fri · 9:00–18:00 UTC</p>
+                <a href="/buy-ipv4-from-us" className="block hover:text-white">
+                  Buying IPv4 From Us
+                </a>
+                <a href="/sell-ipv4-to-us" className="block hover:text-white">
+                  Selling IPv4 To Us
+                </a>
+                <a href="/lease-ipv4-from-us" className="block hover:text-white">
+                  Leasing IPv4 From Us
+                </a>
+                <a href="/lease-ipv4-to-us" className="block hover:text-white">
+                  Leasing IPv4 To Us
+                </a>
               </div>
             </div>
           </div>
         </div>
         <div className="mx-auto mt-8 flex max-w-6xl flex-col gap-4 border-t border-slate-800 px-4 pt-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between lg:px-0">
           <p>
-            © {new Date().getFullYear()} IPv4 Brokerage. All rights reserved.
+            © {new Date().getFullYear()} IPv4Go. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <span>Terms</span>

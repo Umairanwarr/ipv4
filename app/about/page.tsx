@@ -37,9 +37,6 @@ export default function AboutPage() {
                 <a href="/lease-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
                   Lease IPv4
                 </a>
-                <a href="/sponsor-asn" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Sponsor ASN
-                </a>
               </div>
             </div>
             <div className="relative group">

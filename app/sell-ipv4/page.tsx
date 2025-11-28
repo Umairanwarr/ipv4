@@ -121,10 +121,10 @@ export default function SellIPv4Page() {
         <section className="mx-auto mt-16 flex max-w-6xl flex-col gap-12 px-4 md:flex-row md:items-center lg:px-0">
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-semibold text-slate-900">
-              Sell IPv4 Addresses through IPv4Mall
+              Sell IPv4 Addresses through IPv4Go
             </h2>
             <p className="text-sm leading-relaxed text-slate-600">
-              If your organization holds unused or under-utilized IPv4 blocks, IPv4Mall helps you safely bring that capacity to market. We work with enterprises, hosting providers, and network operators to unlock value while maintaining compliance with registry policies.
+              If your organization holds unused or under-utilized IPv4 blocks, IPv4Go helps you safely bring that capacity to market. We work with enterprises, hosting providers, and network operators to unlock value while maintaining compliance with registry policies.
             </p>
             <p className="text-sm leading-relaxed text-slate-600">
               Our team manages buyer vetting, documentation, escrow, and RIR submissions so you can monetize your address space with confidence and minimal disruption to your operations.

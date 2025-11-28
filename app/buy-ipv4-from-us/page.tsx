@@ -109,7 +109,7 @@ export default function BuyingIPv4FromUsPage() {
           <div className="absolute inset-0 bg-slate-900/75" />
           <div className="relative mx-auto flex h-full max-w-6xl items-center px-4 text-white lg:px-0">
             <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
-              Buying IPv4 Addresses from IPv4Mall
+              Buying IPv4 Addresses with IPv4Go
             </h1>
           </div>
         </section>
