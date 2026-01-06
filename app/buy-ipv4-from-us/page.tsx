@@ -10,7 +10,7 @@ export default function BuyingIPv4FromUsPage() {
               IP
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold tracking-tight">Go</span>
+              <span className="text-sm font-semibold tracking-tight">Premium</span>
               <span className="text-[11px] text-slate-500">Buy · Sell · Lease</span>
             </div>
           </a>
@@ -100,7 +100,7 @@ export default function BuyingIPv4FromUsPage() {
         <section className="relative h-80 w-full overflow-hidden bg-slate-950">
           <div className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
+              src="/images/hero-bg.png"
               alt="City skyline representing global connectivity"
               fill
               className="object-cover opacity-80"
@@ -109,7 +109,7 @@ export default function BuyingIPv4FromUsPage() {
           <div className="absolute inset-0 bg-slate-900/75" />
           <div className="relative mx-auto flex h-full max-w-6xl items-center px-4 text-white lg:px-0">
             <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
-              Buying IPv4 Addresses with IPv4Go
+              Buying IPv4 Addresses with IPv4Premium
             </h1>
           </div>
         </section>
@@ -135,7 +135,7 @@ export default function BuyingIPv4FromUsPage() {
               <div className="relative w-full max-w-md rounded-[40px] bg-white p-4 shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80"
+                    src="/images/business-meeting.png"
                     alt="Businessperson reviewing digital compliance checklist"
                     width={900}
                     height={600}
@@ -147,85 +147,158 @@ export default function BuyingIPv4FromUsPage() {
           </div>
         </section>
 
-        <section className="mx-auto mt-24 max-w-5xl px-4 text-center lg:px-0">
-          <h2 className="text-2xl font-semibold text-slate-900">Step By Step Guide</h2>
-          <div className="mt-12 space-y-10">
-            <div className="relative flex justify-center">
-              <div className="relative flex w-full max-w-4xl items-center rounded-full bg-white px-10 py-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
-                <div className="absolute left-32 right-0 top-0 h-[3px] rounded-full bg-red-500" />
-                <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full border-[3px] border-red-500 bg-white text-sm font-semibold text-red-600">
-                  Step 01
-                </div>
-                <div className="ml-6 flex-1 text-left">
-                  <p className="text-sm font-semibold text-slate-900">NDA Sign</p>
-                  <p className="mt-1 text-xs text-slate-600">We sign an NDA and a non-disclosure agreement so details stay confidential.</p>
-                </div>
-              </div>
+        <section className="mx-auto mt-32 max-w-6xl px-4 lg:px-0">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 rounded-full bg-red-50 px-4 py-1.5 text-red-600 ring-1 ring-inset ring-red-600/20 mb-4">
+              <span className="text-xs font-bold uppercase tracking-widest">Process</span>
             </div>
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 sm:text-4xl">
+              Evaluation to Acquisition
+            </h2>
+            <p className="mt-4 text-slate-600 text-lg max-w-2xl mx-auto font-medium">
+              A transparent, compliant journey to securing your IPv4 assets.
+            </p>
+          </div>
 
-            <div className="relative flex justify-center">
-              <div className="relative flex w-full max-w-4xl flex-row-reverse items-center rounded-full bg-white px-10 py-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
-                <div className="absolute left-0 right-32 bottom-0 h-[3px] rounded-full bg-red-500" />
-                <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full border-[3px] border-red-500 bg-white text-sm font-semibold text-red-600">
-                  Step 02
+          <div className="relative">
+            {/* Center Line for Desktop */}
+            <div className="absolute left-1/2 top-4 bottom-4 -ml-px w-0.5 bg-gradient-to-b from-slate-200 via-slate-200 to-transparent hidden md:block" />
+
+            <div className="space-y-12 md:space-y-24">
+              {/* Step 1 */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
+                <div className="w-full md:w-1/2 md:pr-16 md:text-right">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 rounded-3xl bg-white/50 opacity-0 transition-opacity group-hover:opacity-100 blur-xl" />
+                    <div className="relative rounded-2xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.05)] ring-1 ring-slate-900/5 transition-all duration-300 hover:shadow-[0_20px_40px_-4px_rgba(15,23,42,0.1)] hover:-translate-y-1">
+                      <div className="text-6xl font-black text-slate-50/80 absolute -top-4 -right-4 select-none z-0">01</div>
+                      <h3 className="text-xl font-bold text-slate-900 relative z-10 mb-2">NDA Sign</h3>
+                      <p className="text-slate-600 leading-relaxed text-sm relative z-10 font-medium">
+                        We sign an NDA and a non-disclosure agreement so details stay confidential.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="mr-6 flex-1 text-right">
-                  <p className="text-sm font-semibold text-slate-900">Analyse</p>
-                  <p className="mt-1 text-xs text-slate-600">You provide us with your IPv4 requirements. We analyse fit and availability.</p>
+
+                {/* Marker */}
+                <div className="absolute left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white ring-4 ring-slate-50 hidden md:flex z-10">
+                  <div className="h-3 w-3 rounded-full bg-red-600 shadow-[0_0_12px_rgba(220,38,38,0.6)]" />
+                </div>
+
+                <div className="w-full md:w-1/2 md:pl-16 hidden md:block" />
+              </div>
+
+              {/* Step 2 */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
+                <div className="w-full md:w-1/2 md:pr-16 hidden md:block" />
+
+                {/* Marker */}
+                <div className="absolute left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white ring-4 ring-slate-50 hidden md:flex z-10">
+                  <div className="h-3 w-3 rounded-full bg-red-600 shadow-[0_0_12px_rgba(220,38,38,0.6)]" />
+                </div>
+
+                <div className="w-full md:w-1/2 md:pl-16 md:text-left">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 rounded-3xl bg-white/50 opacity-0 transition-opacity group-hover:opacity-100 blur-xl" />
+                    <div className="relative rounded-2xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.05)] ring-1 ring-slate-900/5 transition-all duration-300 hover:shadow-[0_20px_40px_-4px_rgba(15,23,42,0.1)] hover:-translate-y-1">
+                      <div className="text-6xl font-black text-slate-50/80 absolute -top-4 -left-4 select-none z-0">02</div>
+                      <h3 className="text-xl font-bold text-slate-900 relative z-10 mb-2">Analyse</h3>
+                      <p className="text-slate-600 leading-relaxed text-sm relative z-10 font-medium">
+                        You provide us with your IPv4 requirements. We analyse fit and availability.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="relative flex justify-center">
-              <div className="relative flex w-full max-w-4xl items-center rounded-full bg-white px-10 py-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
-                <div className="absolute left-32 right-0 top-0 h-[3px] rounded-full bg-red-500" />
-                <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full border-[3px] border-red-500 bg-white text-sm font-semibold text-red-600">
-                  Step 03
+              {/* Step 3 */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
+                <div className="w-full md:w-1/2 md:pr-16 md:text-right">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 rounded-3xl bg-white/50 opacity-0 transition-opacity group-hover:opacity-100 blur-xl" />
+                    <div className="relative rounded-2xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.05)] ring-1 ring-slate-900/5 transition-all duration-300 hover:shadow-[0_20px_40px_-4px_rgba(15,23,42,0.1)] hover:-translate-y-1">
+                      <div className="text-6xl font-black text-slate-50/80 absolute -top-4 -right-4 select-none z-0">03</div>
+                      <h3 className="text-xl font-bold text-slate-900 relative z-10 mb-2">Agreement</h3>
+                      <p className="text-slate-600 leading-relaxed text-sm relative z-10 font-medium">
+                        We align on ranges, pricing, and timelines and sign a purchase agreement.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="ml-6 flex-1 text-left">
-                  <p className="text-sm font-semibold text-slate-900">Agreement</p>
-                  <p className="mt-1 text-xs text-slate-600">We align on ranges, pricing, and timelines and sign a purchase agreement.</p>
+
+                <div className="absolute left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white ring-4 ring-slate-50 hidden md:flex z-10">
+                  <div className="h-3 w-3 rounded-full bg-red-600 shadow-[0_0_12px_rgba(220,38,38,0.6)]" />
+                </div>
+
+                <div className="w-full md:w-1/2 md:pl-16 hidden md:block" />
+              </div>
+
+              {/* Step 4 */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
+                <div className="w-full md:w-1/2 md:pr-16 hidden md:block" />
+
+                <div className="absolute left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white ring-4 ring-slate-50 hidden md:flex z-10">
+                  <div className="h-3 w-3 rounded-full bg-red-600 shadow-[0_0_12px_rgba(220,38,38,0.6)]" />
+                </div>
+
+                <div className="w-full md:w-1/2 md:pl-16 md:text-left">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 rounded-3xl bg-white/50 opacity-0 transition-opacity group-hover:opacity-100 blur-xl" />
+                    <div className="relative rounded-2xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.05)] ring-1 ring-slate-900/5 transition-all duration-300 hover:shadow-[0_20px_40px_-4px_rgba(15,23,42,0.1)] hover:-translate-y-1">
+                      <div className="text-6xl font-black text-slate-50/80 absolute -top-4 -left-4 select-none z-0">04</div>
+                      <h3 className="text-xl font-bold text-slate-900 relative z-10 mb-2">Payment</h3>
+                      <p className="text-slate-600 leading-relaxed text-sm relative z-10 font-medium">
+                        You transfer funds to the agreed escrow or payment channel.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="relative flex justify-center">
-              <div className="relative flex w-full max-w-4xl flex-row-reverse items-center rounded-full bg-white px-10 py-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
-                <div className="absolute left-0 right-32 bottom-0 h-[3px] rounded-full bg-red-500" />
-                <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full border-[3px] border-red-500 bg-white text-sm font-semibold text-red-600">
-                  Step 04
+              {/* Step 5 */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
+                <div className="w-full md:w-1/2 md:pr-16 md:text-right">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 rounded-3xl bg-white/50 opacity-0 transition-opacity group-hover:opacity-100 blur-xl" />
+                    <div className="relative rounded-2xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.05)] ring-1 ring-slate-900/5 transition-all duration-300 hover:shadow-[0_20px_40px_-4px_rgba(15,23,42,0.1)] hover:-translate-y-1">
+                      <div className="text-6xl font-black text-slate-50/80 absolute -top-4 -right-4 select-none z-0">05</div>
+                      <h3 className="text-xl font-bold text-slate-900 relative z-10 mb-2">Collaboration</h3>
+                      <p className="text-slate-600 leading-relaxed text-sm relative z-10 font-medium">
+                        We work with the seller and RIR to prepare and submit the transfer request.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="mr-6 flex-1 text-right">
-                  <p className="text-sm font-semibold text-slate-900">Payment</p>
-                  <p className="mt-1 text-xs text-slate-600">You transfer funds to the agreed escrow or payment channel.</p>
+
+                <div className="absolute left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white ring-4 ring-slate-50 hidden md:flex z-10">
+                  <div className="h-3 w-3 rounded-full bg-red-600 shadow-[0_0_12px_rgba(220,38,38,0.6)]" />
+                </div>
+
+                <div className="w-full md:w-1/2 md:pl-16 hidden md:block" />
+              </div>
+
+              {/* Step 6 */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
+                <div className="w-full md:w-1/2 md:pr-16 hidden md:block" />
+
+                <div className="absolute left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white ring-4 ring-slate-50 hidden md:flex z-10">
+                  <div className="h-3 w-3 rounded-full bg-red-600 shadow-[0_0_12px_rgba(220,38,38,0.6)]" />
+                </div>
+
+                <div className="w-full md:w-1/2 md:pl-16 md:text-left">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 rounded-3xl bg-white/50 opacity-0 transition-opacity group-hover:opacity-100 blur-xl" />
+                    <div className="relative rounded-2xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.05)] ring-1 ring-slate-900/5 transition-all duration-300 hover:shadow-[0_20px_40px_-4px_rgba(15,23,42,0.1)] hover:-translate-y-1">
+                      <div className="text-6xl font-black text-slate-50/80 absolute -top-4 -left-4 select-none z-0">06</div>
+                      <h3 className="text-xl font-bold text-slate-900 relative z-10 mb-2">Transaction</h3>
+                      <p className="text-slate-600 leading-relaxed text-sm relative z-10 font-medium">
+                        The seller releases the IPv4 block and you start announcing it in your network.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="relative flex justify-center">
-              <div className="relative flex w-full max-w-4xl items-center rounded-full bg-white px-10 py-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
-                <div className="absolute left-32 right-0 top-0 h-[3px] rounded-full bg-red-500" />
-                <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full border-[3px] border-red-500 bg-white text-sm font-semibold text-red-600">
-                  Step 05
-                </div>
-                <div className="ml-6 flex-1 text-left">
-                  <p className="text-sm font-semibold text-slate-900">Collaboration</p>
-                  <p className="mt-1 text-xs text-slate-600">We work with the seller and RIR to prepare and submit the transfer request.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative flex justify-center">
-              <div className="relative flex w-full max-w-4xl flex-row-reverse items-center rounded-full bg-white px-10 py-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
-                <div className="absolute left-0 right-32 bottom-0 h-[3px] rounded-full bg-red-500" />
-                <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full border-[3px] border-red-500 bg-white text-sm font-semibold text-red-600">
-                  Step 06
-                </div>
-                <div className="mr-6 flex-1 text-right">
-                  <p className="text-sm font-semibold text-slate-900">Transaction</p>
-                  <p className="mt-1 text-xs text-slate-600">The seller releases the IPv4 block and you start announcing it in your network.</p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -250,7 +323,7 @@ export default function BuyingIPv4FromUsPage() {
                 </p>
                 <div className="mt-6 overflow-hidden rounded-3xl bg-slate-900">
                   <Image
-                    src="https://images.unsplash.com/photo-1587202372775-98927f504d09?auto=format&fit=crop&w=1400&q=80"
+                    src="/images/server-corridor.png"
                     alt="Modern data center hallway"
                     width={900}
                     height={540}

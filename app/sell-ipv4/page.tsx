@@ -11,7 +11,7 @@ export default function SellIPv4Page() {
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-semibold tracking-tight">
-                Go
+                Premium
               </span>
               <span className="text-[11px] text-slate-500">
                 Buy · Sell · Lease
@@ -104,7 +104,7 @@ export default function SellIPv4Page() {
         <section className="relative h-72 w-full overflow-hidden bg-slate-950">
           <div className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
+              src="/images/hero-bg.png"
               alt="City skyline representing global internet infrastructure"
               fill
               className="object-cover opacity-80"
@@ -121,10 +121,10 @@ export default function SellIPv4Page() {
         <section className="mx-auto mt-16 flex max-w-6xl flex-col gap-12 px-4 md:flex-row md:items-center lg:px-0">
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-semibold text-slate-900">
-              Sell IPv4 Addresses through IPv4Go
+              Sell IPv4 Addresses through IPv4Premium
             </h2>
             <p className="text-sm leading-relaxed text-slate-600">
-              If your organization holds unused or under-utilized IPv4 blocks, IPv4Go helps you safely bring that capacity to market. We work with enterprises, hosting providers, and network operators to unlock value while maintaining compliance with registry policies.
+              If your organization holds unused or under-utilized IPv4 blocks, IPv4Premium helps you safely bring that capacity to market. We work with enterprises, hosting providers, and network operators to unlock value while maintaining compliance with registry policies.
             </p>
             <p className="text-sm leading-relaxed text-slate-600">
               Our team manages buyer vetting, documentation, escrow, and RIR submissions so you can monetize your address space with confidence and minimal disruption to your operations.
@@ -135,7 +135,7 @@ export default function SellIPv4Page() {
               <div className="relative w-full max-w-md rounded-[40px] bg-white p-4 shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1510519138101-570d1dca3d66?auto=format&fit=crop&w=1200&q=80"
+                    src="/images/network-equipment.png"
                     alt="Digital domains and network concepts on a virtual screen"
                     width={900}
                     height={600}
@@ -153,7 +153,7 @@ export default function SellIPv4Page() {
               <div className="relative w-full max-w-md rounded-[40px] bg-white p-4 shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1587206665307-69ef9bb15537?auto=format&fit=crop&w=1200&q=80"
+                    src="/images/server-corridor.png"
                     alt="Close-up of network patch cables in a data center"
                     width={900}
                     height={600}
@@ -193,7 +193,7 @@ export default function SellIPv4Page() {
               <div className="relative w-full max-w-md rounded-[40px] bg-white p-4 shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80"
+                    src="/images/business-meeting.png"
                     alt="Professional using a tablet to review transaction details"
                     width={900}
                     height={600}
@@ -224,7 +224,7 @@ export default function SellIPv4Page() {
                 </p>
                 <div className="mt-6 overflow-hidden rounded-3xl bg-slate-900">
                   <Image
-                    src="https://images.unsplash.com/photo-1587202372775-98927f504d09?auto=format&fit=crop&w=1400&q=80"
+                    src="/images/server-corridor.png"
                     alt="Server racks in a secure data center"
                     width={900}
                     height={540}

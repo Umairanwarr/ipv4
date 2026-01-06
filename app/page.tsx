@@ -6,12 +6,12 @@ export default function Home() {
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:px-0">
           <a href="#hero" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-              IP
+            <div className="flex h-9 w-auto px-2 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
+              IPv4
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-semibold tracking-tight">
-                Go
+                Premium
               </span>
               <span className="text-[11px] text-slate-500">
                 Buy · Sell · Lease
@@ -127,7 +127,7 @@ export default function Home() {
               <div className="pointer-events-none absolute left-1/2 top-4 h-1.5 w-16 -translate-x-1/2 rounded-full bg-slate-200" />
               <div className="mt-8 overflow-hidden rounded-3xl bg-slate-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
+                  src="/images/network-equipment.png"
                   alt="Close-up of network switches and Ethernet cables in a data center"
                   width={640}
                   height={480}
@@ -170,7 +170,7 @@ export default function Home() {
               <div className="pointer-events-none absolute -left-10 -top-10 hidden h-full w-full rounded-[44px] border border-slate-100 md:block" />
               <div className="overflow-hidden rounded-[32px] bg-slate-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1587202372775-98927f504d09?auto=format&fit=crop&w=1400&q=80"
+                  src="/images/server-corridor.png"
                   alt="Perspective view down a brightly lit data center aisle"
                   width={900}
                   height={600}
@@ -231,7 +231,7 @@ export default function Home() {
               <div className="pointer-events-none absolute -right-10 -bottom-10 hidden h-full w-full rounded-[44px] border border-slate-100 md:block" />
               <div className="overflow-hidden rounded-[32px] bg-slate-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80"
+                  src="/images/business-meeting.png"
                   alt="Business professional using a tablet with digital network icons overlayed"
                   width={900}
                   height={600}
@@ -341,12 +341,12 @@ export default function Home() {
                 </li>
                 <li>
                   <span className="font-semibold">3. Escrow &amp;
-                  verification.</span> Funds and ownership are verified before
+                    verification.</span> Funds and ownership are verified before
                   RIR submission.
                 </li>
                 <li>
                   <span className="font-semibold">4. RIR approval &amp;
-                  handoff.</span> We guide your team until space lands in your
+                    handoff.</span> We guide your team until space lands in your
                   account.
                 </li>
               </ol>
@@ -376,7 +376,7 @@ export default function Home() {
               </p>
               <div className="mt-6 overflow-hidden rounded-3xl bg-slate-900">
                 <Image
-                  src="https://images.unsplash.com/photo-1587202372775-98927f504d09?auto=format&fit=crop&w=1400&q=80"
+                  src="/images/server-corridor.png"
                   alt="Row of server racks in a modern data center"
                   width={900}
                   height={540}
@@ -484,7 +484,7 @@ export default function Home() {
               <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-red-600 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">
                 IP
               </div>
-              <span className="text-sm font-semibold">IPv4Go</span>
+              <span className="text-sm font-semibold">IPv4Premium</span>
             </div>
             <p className="max-w-sm text-xs text-slate-400">
               A dedicated IPv4 brokerage desk helping buyers, sellers, and lessors
@@ -562,7 +562,7 @@ export default function Home() {
         </div>
         <div className="mx-auto mt-8 flex max-w-6xl flex-col gap-4 border-t border-slate-800 px-4 pt-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between lg:px-0">
           <p>
-            © {new Date().getFullYear()} IPv4Go. All rights reserved.
+            © {new Date().getFullYear()} IPv4Premium. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <span>Terms</span>

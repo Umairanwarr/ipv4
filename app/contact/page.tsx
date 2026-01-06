@@ -19,7 +19,7 @@ export default function ContactPage() {
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-semibold tracking-tight">
-                Go
+                Premium
               </span>
               <span className="text-[11px] text-slate-500">
                 Buy · Sell · Lease
@@ -108,11 +108,11 @@ export default function ContactPage() {
       <main className="pb-20">
         {/* Hero banner */}
         <section className="relative h-80 w-full overflow-visible bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white">
-          <div className="absolute inset-0" style={{ backgroundImage: "url('https://www.toptal.com/designers/subtlepatterns/uploads/circuit-board.png')" }}></div>
+          <div className="absolute inset-0" style={{ backgroundImage: "url('/images/pattern.png')" }}></div>
           <div className="absolute inset-0 bg-slate-900/80" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/50" />
           <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center gap-4 px-4 text-center lg:px-0">
-            <h1 className="text-4xl font-bold sm:text-5xl">IPv4Go Help is Available!</h1>
+            <h1 className="text-4xl font-bold sm:text-5xl">IPv4Premium Help is Available!</h1>
             <p className="mx-auto max-w-2xl text-base text-slate-300">
               Whether you need to quickly source scarce IPv4 addresses, navigate complex registry requirements,
               or monetize dormant address blocks, our experienced team is here to assist you at every step.
@@ -149,7 +149,7 @@ export default function ContactPage() {
                   <p className="font-medium">Primary office HQ: 1445 New York-Newark, NJ 07114</p>
                   <p>Phone: (555) 555-1234</p>
                   <p>Fax: (555) 555-5678</p>
-                  <p>Email: na@ipv4go.com</p>
+                  <p>Email: na@ipv4premium.com</p>
                 </div>
                 <button className="mt-6 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
                   View Map
@@ -161,7 +161,7 @@ export default function ContactPage() {
                   <p className="font-medium">Regional office: R. São Paulo, Brazil 04543-011</p>
                   <p>Phone: +55 11 5555-1234</p>
                   <p>Fax: +55 11 5555-5678</p>
-                  <p>Email: sa@ipv4go.com</p>
+                  <p>Email: sa@ipv4premium.com</p>
                 </div>
                 <button className="mt-6 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
                   View Map
@@ -213,7 +213,7 @@ export default function ContactPage() {
                 </p>
                 <div className="mt-6 overflow-hidden rounded-3xl bg-slate-900">
                   <Image
-                    src="https://images.unsplash.com/photo-1587202372775-98927f504d09?auto=format&fit=crop&w=1400&q=80"
+                    src="/images/server-corridor.png"
                     alt="Modern data center hallway"
                     width={900}
                     height={540}

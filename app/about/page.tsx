@@ -131,7 +131,7 @@ export default function AboutPage() {
                 <div className="pointer-events-none absolute -left-10 -top-10 hidden h-full w-full rounded-[44px] border border-slate-100 md:block" />
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80"
+                    src="/images/business-meeting.png"
                     alt="Broker reviewing network and transaction data on screen"
                     width={900}
                     height={600}
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 <div className="pointer-events-none absolute -right-10 -top-10 hidden h-full w-full rounded-[44px] border border-slate-100 md:block" />
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+                    src="/images/network-equipment.png"
                     alt="Engineer managing IPv4 address resources on tablet"
                     width={900}
                     height={600}
@@ -200,7 +200,7 @@ export default function AboutPage() {
                 <div className="pointer-events-none absolute -left-10 -bottom-10 hidden h-full w-full rounded-[44px] border border-slate-100 md:block" />
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1200&q=80"
+                    src="/images/server-corridor.png"
                     alt="Global network visualization representing IPv4 connectivity"
                     width={900}
                     height={600}
@@ -230,7 +230,7 @@ export default function AboutPage() {
                 </p>
                 <div className="mt-6 overflow-hidden rounded-3xl bg-slate-900">
                   <Image
-                    src="https://images.unsplash.com/photo-1587202372775-98927f504d09?auto=format&fit=crop&w=1400&q=80"
+                    src="/images/server-corridor.png"
                     alt="Modern data center hallway"
                     width={900}
                     height={540}

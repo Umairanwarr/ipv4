@@ -10,7 +10,7 @@ export default function BuyArinIPv4Page() {
               IP
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold tracking-tight">Go</span>
+              <span className="text-sm font-semibold tracking-tight">Premium</span>
               <span className="text-[11px] text-slate-500">Buy · Sell · Lease</span>
             </div>
           </a>
@@ -100,7 +100,7 @@ export default function BuyArinIPv4Page() {
         <section className="relative h-80 w-full overflow-hidden bg-slate-950">
           <div className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
+              src="/images/hero-bg.png"
               alt="City skyline representing global connectivity"
               fill
               className="object-cover opacity-80"
@@ -137,7 +137,7 @@ export default function BuyArinIPv4Page() {
               <div className="relative w-full max-w-md rounded-[40px] bg-white p-4 shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80"
+                    src="/images/network-equipment.png"
                     alt="Digital infrastructure in a data center"
                     width={900}
                     height={600}
@@ -178,7 +178,7 @@ export default function BuyArinIPv4Page() {
               <div className="relative w-full max-w-md rounded-[40px] bg-white p-4 shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80"
+                    src="/images/server-corridor.png"
                     alt="Engineer reviewing ARIN policy documentation"
                     width={900}
                     height={600}
@@ -196,7 +196,7 @@ export default function BuyArinIPv4Page() {
               <div className="relative w-full max-w-md rounded-[40px] bg-white p-4 shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80"
+                    src="/images/business-meeting.png"
                     alt="Abstract view of global routing"
                     width={900}
                     height={600}
@@ -239,7 +239,7 @@ export default function BuyArinIPv4Page() {
                 </p>
                 <div className="mt-6 overflow-hidden rounded-3xl bg-slate-900">
                   <Image
-                    src="https://images.unsplash.com/photo-1587202372775-98927f504d09?auto=format&fit=crop&w=1400&q=80"
+                    src="/images/server-corridor.png"
                     alt="Modern data center hallway"
                     width={900}
                     height={540}
