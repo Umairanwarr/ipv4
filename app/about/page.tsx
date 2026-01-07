@@ -6,12 +6,12 @@ export default function AboutPage() {
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:px-0">
           <a href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-              IP
+            <div className="flex h-9 w-auto px-2 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
+              IPv4
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-semibold tracking-tight">
-                Go
+                Premium
               </span>
               <span className="text-[11px] text-slate-500">
                 Buy · Sell · Lease
@@ -240,7 +240,8 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <form className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
+            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
+              <input type="hidden" name="access_key" value="974f34ae-14d6-4b5d-b724-96fbd46082ad" />
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
@@ -248,6 +249,8 @@ export default function AboutPage() {
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none ring-0 placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="Jane Doe"
                   />
@@ -258,6 +261,7 @@ export default function AboutPage() {
                   </label>
                   <input
                     type="text"
+                    name="company"
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="Your organization"
                   />
@@ -270,6 +274,8 @@ export default function AboutPage() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="you@example.com"
                   />
@@ -280,6 +286,7 @@ export default function AboutPage() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="+1 555 000 0000"
                   />
@@ -291,15 +298,15 @@ export default function AboutPage() {
                 </p>
                 <div className="grid gap-2 text-xs md:grid-cols-3">
                   <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 hover:border-sky-400">
-                    <input type="checkbox" className="h-3 w-3 rounded border-slate-500 bg-slate-900" />
+                    <input type="checkbox" name="interest" value="Buy IPv4 space" className="h-3 w-3 rounded border-slate-500 bg-slate-900" />
                     <span>Buy IPv4 space</span>
                   </label>
                   <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 hover:border-sky-400">
-                    <input type="checkbox" className="h-3 w-3 rounded border-slate-500 bg-slate-900" />
+                    <input type="checkbox" name="interest" value="Sell IPv4 space" className="h-3 w-3 rounded border-slate-500 bg-slate-900" />
                     <span>Sell IPv4 space</span>
                   </label>
                   <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 hover:border-sky-400">
-                    <input type="checkbox" className="h-3 w-3 rounded border-slate-500 bg-slate-900" />
+                    <input type="checkbox" name="interest" value="Lease IPv4 space" className="h-3 w-3 rounded border-slate-500 bg-slate-900" />
                     <span>Lease IPv4 space</span>
                   </label>
                 </div>
@@ -309,6 +316,8 @@ export default function AboutPage() {
                   Describe your requirements
                 </label>
                 <textarea
+                  name="message"
+                  required
                   rows={4}
                   className="w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                   placeholder="Share as much detail as you can - expected prefix size, region, timeline, and any RIR constraints."

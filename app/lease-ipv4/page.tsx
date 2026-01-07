@@ -6,8 +6,8 @@ export default function LeaseIPv4Page() {
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:px-0">
           <a href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-              IP
+            <div className="flex h-9 w-auto px-2 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
+              IPv4
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-semibold tracking-tight">Premium</span>
@@ -362,7 +362,8 @@ export default function LeaseIPv4Page() {
               </div>
             </div>
 
-            <form className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
+            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
+              <input type="hidden" name="access_key" value="974f34ae-14d6-4b5d-b724-96fbd46082ad" />
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
@@ -370,6 +371,8 @@ export default function LeaseIPv4Page() {
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none ring-0 placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="Your full name"
                   />
@@ -380,6 +383,8 @@ export default function LeaseIPv4Page() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="you@example.com"
                   />
@@ -392,6 +397,7 @@ export default function LeaseIPv4Page() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="+1 555 000 0000"
                   />
@@ -402,6 +408,7 @@ export default function LeaseIPv4Page() {
                   </label>
                   <input
                     type="text"
+                    name="company"
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="Your organization"
                   />
@@ -420,6 +427,7 @@ export default function LeaseIPv4Page() {
                       <input
                         type="radio"
                         name="lease-range"
+                        value={range}
                         className="h-3 w-3 rounded-full border-slate-500 bg-slate-900"
                       />
                       <span>{range}</span>
@@ -440,6 +448,7 @@ export default function LeaseIPv4Page() {
                       <input
                         type="radio"
                         name="lease-term"
+                        value={term}
                         className="h-3 w-3 rounded-full border-slate-500 bg-slate-900"
                       />
                       <span>{term}</span>
@@ -452,6 +461,8 @@ export default function LeaseIPv4Page() {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  required
                   rows={4}
                   className="w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                   placeholder="Share any details about your project, preferred regions, and timelines."

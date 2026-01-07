@@ -1,13 +1,47 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function BuyArinIPv4Page() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        setMessage("Form submitted successfully!");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setMessage(data.message || "Something went wrong");
+      }
+    } catch (error) {
+      setMessage("Connection error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#f5f5f7] font-sans text-slate-900">
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:px-0">
           <a href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-              IP
+            <div className="flex h-9 w-auto px-2 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
+              IPv4
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-semibold tracking-tight">Premium</span>
@@ -249,7 +283,8 @@ export default function BuyArinIPv4Page() {
               </div>
             </div>
 
-            <form className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
+            <form onSubmit={onSubmit} className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
+              <input type="hidden" name="access_key" value="974f34ae-14d6-4b5d-b724-96fbd46082ad" />
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
@@ -257,6 +292,8 @@ export default function BuyArinIPv4Page() {
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none ring-0 placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="Your full name"
                   />
@@ -267,6 +304,8 @@ export default function BuyArinIPv4Page() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="you@example.com"
                   />
@@ -279,6 +318,7 @@ export default function BuyArinIPv4Page() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="+1 555 000 0000"
                   />
@@ -289,6 +329,7 @@ export default function BuyArinIPv4Page() {
                   </label>
                   <input
                     type="text"
+                    name="company"
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                     placeholder="Your organization"
                   />
@@ -301,16 +342,18 @@ export default function BuyArinIPv4Page() {
                 <div className="grid gap-2 text-xs sm:grid-cols-3">
                   {[
                     "Buy ARIN IPv4",
-                    "Lease ARIN IPv4",
                     "Sell ARIN IPv4",
+                    "Discuss options",
                   ].map((item) => (
                     <label
                       key={item}
                       className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 hover:border-sky-400"
                     >
                       <input
-                        type="checkbox"
-                        className="h-3 w-3 rounded border-slate-500 bg-slate-900"
+                        type="radio"
+                        name="interest"
+                        value={item}
+                        className="h-3 w-3 rounded-full border-slate-500 bg-slate-900 text-sky-400 focus:ring-sky-400"
                       />
                       <span>{item}</span>
                     </label>
@@ -322,18 +365,38 @@ export default function BuyArinIPv4Page() {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  required
                   rows={4}
                   className="w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
                   placeholder="Share any details about your ARIN requirements, timelines, and regions."
                 />
               </div>
               <div className="space-y-3 text-xs text-slate-400">
-                <button
-                  type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-red-600 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-sm hover:bg-red-700 md:w-auto"
-                >
-                  Submit
-                </button>
+                <div className="flex flex-col gap-2">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || isSuccess}
+                    className={`inline-flex w-full items-center justify-center rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-sm transition-colors md:w-auto ${isSuccess
+                        ? "bg-green-600 hover:bg-green-700"
+                        : "bg-red-600 hover:bg-red-700"
+                      }`}
+                  >
+                    {isSubmitting
+                      ? "Sending..."
+                      : isSuccess
+                        ? "Submitted"
+                        : "Submit"}
+                  </button>
+                  {message && (
+                    <p
+                      className={`text-center md:text-left ${isSuccess ? "text-green-400" : "text-red-400"
+                        }`}
+                    >
+                      {message}
+                    </p>
+                  )}
+                </div>
                 <p>
                   By submitting this form you agree that we may contact you about ARIN IPv4 services in accordance with our
                   standard privacy practices.
