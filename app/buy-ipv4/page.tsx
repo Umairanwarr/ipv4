@@ -1,6 +1,40 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function BuyIPv4Page() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        setMessage("Form submitted successfully!");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setMessage(data.message || "Something went wrong");
+      }
+    } catch (error) {
+      setMessage("Connection error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#f5f5f7] font-sans text-slate-900">
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -124,7 +158,7 @@ export default function BuyIPv4Page() {
               The growing demand for IPv4 addresses has made it harder than ever to secure clean, routable space. IPv4Premium helps operators, cloud providers, and enterprises source address blocks without the uncertainty of informal channels.
             </p>
             <p className="text-sm leading-relaxed text-slate-600">
-              Whether you need a single /24 or multiple /16s, we coordinate every stage of the transactionfrom matching supply and demand, to escrow, to RIR submissionso you can stay focused on running your network.
+              Whether you need a single /24 or multiple /16s, we coordinate every stage of the transaction from matching supply and demand, to escrow, to RIR submission so you can stay focused on running your network.
             </p>
           </div>
           <div className="flex-1">
@@ -231,7 +265,7 @@ export default function BuyIPv4Page() {
               </div>
             </div>
 
-            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
+            <form onSubmit={onSubmit} className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
               <input type="hidden" name="access_key" value="974f34ae-14d6-4b5d-b724-96fbd46082ad" />
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-1">
@@ -297,7 +331,7 @@ export default function BuyIPv4Page() {
                         type="radio"
                         name="range"
                         value={range}
-                        className="h-3 w-3 rounded-full border-slate-500 bg-slate-900"
+                        className="h-3 w-3 rounded-full border-slate-500 bg-slate-900 text-sky-400 focus:ring-sky-400"
                       />
                       <span>{range}</span>
                     </label>
@@ -317,12 +351,30 @@ export default function BuyIPv4Page() {
                 />
               </div>
               <div className="space-y-3 text-xs text-slate-400">
-                <button
-                  type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-red-600 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-sm hover:bg-red-700 md:w-auto"
-                >
-                  Submit
-                </button>
+                <div className="flex flex-col gap-2">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || isSuccess}
+                    className={`inline-flex w-full items-center justify-center rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-sm transition-colors md:w-auto ${isSuccess
+                        ? "bg-green-600 hover:bg-green-700"
+                        : "bg-red-600 hover:bg-red-700"
+                      }`}
+                  >
+                    {isSubmitting
+                      ? "Sending..."
+                      : isSuccess
+                        ? "Submitted"
+                        : "Submit"}
+                  </button>
+                  {message && (
+                    <p
+                      className={`text-center md:text-left ${isSuccess ? "text-green-400" : "text-red-400"
+                        }`}
+                    >
+                      {message}
+                    </p>
+                  )}
+                </div>
                 <p>
                   By submitting this form you agree that we may contact you about IPv4 services in accordance with our standard privacy practices.
                 </p>

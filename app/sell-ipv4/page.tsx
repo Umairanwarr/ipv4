@@ -1,6 +1,40 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function SellIPv4Page() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        setMessage("Form submitted successfully!");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setMessage(data.message || "Something went wrong");
+      }
+    } catch (error) {
+      setMessage("Connection error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#f5f5f7] font-sans text-slate-900">
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -36,9 +70,6 @@ export default function SellIPv4Page() {
                 </a>
                 <a href="/lease-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
                   Lease IPv4
-                </a>
-                <a href="/sponsor-asn" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Sponsor ASN
                 </a>
               </div>
             </div>
@@ -105,7 +136,7 @@ export default function SellIPv4Page() {
           <div className="absolute inset-0">
             <Image
               src="/images/hero-bg.png"
-              alt="City skyline representing global internet infrastructure"
+              alt="Global network nodes connecting continents"
               fill
               className="object-cover opacity-80"
             />
@@ -113,7 +144,7 @@ export default function SellIPv4Page() {
           <div className="absolute inset-0 bg-slate-900/70" />
           <div className="relative mx-auto flex h-full max-w-6xl items-center px-4 lg:px-0">
             <h1 className="text-3xl font-semibold text-white sm:text-4xl md:text-5xl">
-              Sell IPv4 Address
+              Sell IPv4 Addresses
             </h1>
           </div>
         </section>
@@ -121,13 +152,13 @@ export default function SellIPv4Page() {
         <section className="mx-auto mt-16 flex max-w-6xl flex-col gap-12 px-4 md:flex-row md:items-center lg:px-0">
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-semibold text-slate-900">
-              Sell IPv4 Addresses through IPv4Premium
+              Monetize Your Unused IPv4 Assets
             </h2>
             <p className="text-sm leading-relaxed text-slate-600">
-              If your organization holds unused or under-utilized IPv4 blocks, IPv4Premium helps you safely bring that capacity to market. We work with enterprises, hosting providers, and network operators to unlock value while maintaining compliance with registry policies.
+              Sitting on dormant IPv4 blocks? You can unlock significant value by selling your address space to verified buyers. We help you navigate the entire process, from finding a buyer to handling RIR transfers and securing payment.
             </p>
             <p className="text-sm leading-relaxed text-slate-600">
-              Our team manages buyer vetting, documentation, escrow, and RIR submissions so you can monetize your address space with confidence and minimal disruption to your operations.
+              Our brokerage desk ensures you get fair market value and handles the heavy lifting of compliance and documentation, so you can focus on your core business while we finalize the deal.
             </p>
           </div>
           <div className="flex-1">
@@ -135,8 +166,8 @@ export default function SellIPv4Page() {
               <div className="relative w-full max-w-md rounded-[40px] bg-white p-4 shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="/images/network-equipment.png"
-                    alt="Digital domains and network concepts on a virtual screen"
+                    src="/images/server-corridor.png"
+                    alt="Row of server racks in a data center"
                     width={900}
                     height={600}
                     className="h-full w-full object-cover"
@@ -153,8 +184,8 @@ export default function SellIPv4Page() {
               <div className="relative w-full max-w-md rounded-[40px] bg-white p-4 shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
                 <div className="overflow-hidden rounded-[32px] bg-slate-200">
                   <Image
-                    src="/images/server-corridor.png"
-                    alt="Close-up of network patch cables in a data center"
+                    src="/images/business-meeting.png"
+                    alt="Professionals finalizing an IPv4 sale agreement"
                     width={900}
                     height={600}
                     className="h-full w-full object-cover"
@@ -165,43 +196,14 @@ export default function SellIPv4Page() {
           </div>
           <div className="order-1 flex-1 space-y-4 md:order-2">
             <h2 className="text-2xl font-semibold text-slate-900">
-              Get The Best Price For Your IPv4 Offerings
+              A Secure and Transparent Sales Process
             </h2>
             <p className="text-sm leading-relaxed text-slate-600">
-              We continuously monitor IPv4 market activity across regions so you receive pricing guidance based on current demand, block size, and reputation. Our goal is to help you maximize the value of your space without slowing down the transaction.
+              Selling IPv4 space involves strict registry policies and financial security concerns. We act as a trusted intermediary, vetting buyers and using escrow services to protect your funds until the transfer is officially recorded.
             </p>
             <p className="text-sm leading-relaxed text-slate-600">
-              From initial valuation to final closing, we negotiate on your behalf, coordinate counterparty due diligence, and keep you informed of every step so there are no surprises.
+              We also assist with legacy updates, clean-up of old records, and communication with RIRs (ARIN, RIPE, APNIC, etc.) to ensure a smooth handover and faster closing times.
             </p>
-          </div>
-        </section>
-
-        <section className="mx-auto mt-16 flex max-w-6xl flex-col gap-12 px-4 md:flex-row md:items-center lg:px-0">
-          <div className="flex-1 space-y-4">
-            <h2 className="text-2xl font-semibold text-slate-900">
-              Our Key Services
-            </h2>
-            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-600">
-              <li>Comprehensive valuation support to help you understand market demand for your specific block sizes and regions.</li>
-              <li>End-to-end transaction management including NDAs, LOIs, escrow coordination, and RIR documentation.</li>
-              <li>Reputation and risk checks on buyers to reduce the chance of last-minute delays or failed transfers.</li>
-              <li>Guidance on routing, announcements, and timing to minimize impact on your existing network operations.</li>
-            </ul>
-          </div>
-          <div className="flex-1">
-            <div className="relative flex justify-center md:justify-end">
-              <div className="relative w-full max-w-md rounded-[40px] bg-white p-4 shadow-[0_24px_60px_rgba(15,23,42,0.18)]">
-                <div className="overflow-hidden rounded-[32px] bg-slate-200">
-                  <Image
-                    src="/images/business-meeting.png"
-                    alt="Professional using a tablet to review transaction details"
-                    width={900}
-                    height={600}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -211,21 +213,21 @@ export default function SellIPv4Page() {
         >
           <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.1fr)] lg:px-0">
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 p-8">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_#22d3ee_0,_transparent_55%),radial-gradient(circle_at_bottom,_#f97316_0,_transparent_55%)] opacity-40" />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_#f97316_0,_transparent_55%),radial-gradient(circle_at_bottom,_#8b5cf6_0,_transparent_55%)] opacity-40" />
               <div className="relative space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-200">
-                  If you'd like us to contact you
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-200">
+                  Ready to sell?
                 </p>
                 <h2 className="text-2xl font-semibold">
-                  Kindly fill the form below and our IPv4 specialist will contact you.
+                  Get a free valuation for your IPv4 blocks.
                 </h2>
                 <p className="text-sm text-slate-200">
-                  Tell us what you are planning to sell, including block sizes, regions, and timelines. We will review your request and reply with options and next steps.
+                  Share details about the IPv4 ranges you wish to sell. We'll evaluate current market rates and get back to you with a proposal within one business day.
                 </p>
                 <div className="mt-6 overflow-hidden rounded-3xl bg-slate-900">
                   <Image
-                    src="/images/server-corridor.png"
-                    alt="Server racks in a secure data center"
+                    src="/images/business-meeting.png"
+                    alt="Two people discussing document details at a desk"
                     width={900}
                     height={540}
                     className="h-full w-full object-cover opacity-90"
@@ -234,24 +236,24 @@ export default function SellIPv4Page() {
               </div>
             </div>
 
-            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
+            <form onSubmit={onSubmit} className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
               <input type="hidden" name="access_key" value="974f34ae-14d6-4b5d-b724-96fbd46082ad" />
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
-                    Name
+                    Your Name
                   </label>
                   <input
                     type="text"
                     name="name"
                     required
                     className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none ring-0 placeholder:text-slate-500 focus:border-sky-400"
-                    placeholder="Your full name"
+                    placeholder="Jane Doe"
                   />
                 </div>
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
-                    Email
+                    Email Address
                   </label>
                   <input
                     type="email"
@@ -265,7 +267,7 @@ export default function SellIPv4Page() {
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
-                    Phone number
+                    Contact Number
                   </label>
                   <input
                     type="tel"
@@ -276,13 +278,14 @@ export default function SellIPv4Page() {
                 </div>
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
-                    Company
+                    Service
                   </label>
                   <input
                     type="text"
-                    name="company"
-                    className="h-10 w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
-                    placeholder="Your organization"
+                    name="service"
+                    value="Sell IPv4"
+                    readOnly
+                    className="h-10 w-full rounded-lg border border-slate-700 bg-slate-900 px-3 text-sm text-slate-400 outline-none"
                   />
                 </div>
               </div>
@@ -300,7 +303,7 @@ export default function SellIPv4Page() {
                         type="radio"
                         name="sell-range"
                         value={range}
-                        className="h-3 w-3 rounded-full border-slate-500 bg-slate-900"
+                        className="h-3 w-3 rounded-full border-slate-500 bg-slate-900 text-sky-400 focus:ring-sky-400"
                       />
                       <span>{range}</span>
                     </label>
@@ -309,23 +312,41 @@ export default function SellIPv4Page() {
               </div>
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
-                  Message
+                  Additional Details
                 </label>
                 <textarea
                   name="message"
                   required
                   rows={4}
                   className="w-full rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
-                  placeholder="Share any details about your project, preferred timelines, and other requirements."
+                  placeholder="Tell us about the block's history, RIR region, and if there are any current routing configurations."
                 />
               </div>
               <div className="space-y-3 text-xs text-slate-400">
-                <button
-                  type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-red-600 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-sm hover:bg-red-700 md:w-auto"
-                >
-                  Submit
-                </button>
+                <div className="flex flex-col gap-2">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || isSuccess}
+                    className={`inline-flex w-full items-center justify-center rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-sm transition-colors md:w-auto ${isSuccess
+                        ? "bg-green-600 hover:bg-green-700"
+                        : "bg-red-600 hover:bg-red-700"
+                      }`}
+                  >
+                    {isSubmitting
+                      ? "Sending..."
+                      : isSuccess
+                        ? "Submitted"
+                        : "Submit details"}
+                  </button>
+                  {message && (
+                    <p
+                      className={`text-center md:text-left ${isSuccess ? "text-green-400" : "text-red-400"
+                        }`}
+                    >
+                      {message}
+                    </p>
+                  )}
+                </div>
                 <p>
                   By submitting this form you agree that we may contact you about IPv4 services in accordance with our standard privacy practices.
                 </p>

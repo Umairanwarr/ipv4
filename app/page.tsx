@@ -1,6 +1,40 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        setMessage("Form submitted successfully!");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setMessage(data.message || "Something went wrong");
+      }
+    } catch (error) {
+      setMessage("Connection error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#f5f5f7] font-sans text-slate-900">
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -216,7 +250,7 @@ export default function Home() {
             </p>
             <p className="text-sm leading-relaxed text-slate-600">
               You get a single point of contact who coordinates legal, technical,
-              and RIR requirementsfrom the first discussion through final
+              and RIR requirements from the first discussion through final
               confirmation in your registry account.
             </p>
             <a
@@ -386,7 +420,7 @@ export default function Home() {
             </div>
           </div>
 
-          <form action="https://api.web3forms.com/submit" method="POST" className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
+          <form onSubmit={onSubmit} className="space-y-5 rounded-3xl bg-slate-900/80 p-8 shadow-xl">
             <input type="hidden" name="access_key" value="974f34ae-14d6-4b5d-b724-96fbd46082ad" />
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-1">
@@ -443,18 +477,21 @@ export default function Home() {
                 I want to
               </p>
               <div className="grid gap-2 text-xs md:grid-cols-3">
-                <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 hover:border-sky-400">
-                  <input type="checkbox" name="interest" value="Buy IPv4 space" className="h-3 w-3 rounded border-slate-500 bg-slate-900" />
-                  <span>Buy IPv4 space</span>
-                </label>
-                <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 hover:border-sky-400">
-                  <input type="checkbox" name="interest" value="Sell IPv4 space" className="h-3 w-3 rounded border-slate-500 bg-slate-900" />
-                  <span>Sell IPv4 space</span>
-                </label>
-                <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 hover:border-sky-400">
-                  <input type="checkbox" name="interest" value="Lease IPv4 space" className="h-3 w-3 rounded border-slate-500 bg-slate-900" />
-                  <span>Lease IPv4 space</span>
-                </label>
+                {[
+                  "Buy IPv4 space",
+                  "Sell IPv4 space",
+                  "Lease IPv4 space"
+                ].map((option) => (
+                  <label key={option} className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2 hover:border-sky-400">
+                    <input
+                      type="radio"
+                      name="interest"
+                      value={option}
+                      className="h-3 w-3 rounded-full border-slate-500 bg-slate-900 text-sky-400 focus:ring-sky-400"
+                    />
+                    <span>{option}</span>
+                  </label>
+                ))}
               </div>
             </div>
             <div className="space-y-1">
@@ -470,12 +507,30 @@ export default function Home() {
               />
             </div>
             <div className="space-y-3 text-xs text-slate-400">
-              <button
-                type="submit"
-                className="inline-flex w-full items-center justify-center rounded-full bg-red-600 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-sm hover:bg-red-700 md:w-auto"
-              >
-                Submit request
-              </button>
+              <div className="flex flex-col gap-2">
+                <button
+                  type="submit"
+                  disabled={isSubmitting || isSuccess}
+                  className={`inline-flex w-full items-center justify-center rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-sm transition-colors md:w-auto ${isSuccess
+                      ? "bg-green-600 hover:bg-green-700"
+                      : "bg-red-600 hover:bg-red-700"
+                    }`}
+                >
+                  {isSubmitting
+                    ? "Sending..."
+                    : isSuccess
+                      ? "Submitted"
+                      : "Submit request"}
+                </button>
+                {message && (
+                  <p
+                    className={`text-center md:text-left ${isSuccess ? "text-green-400" : "text-red-400"
+                      }`}
+                  >
+                    {message}
+                  </p>
+                )}
+              </div>
               <p>
                 By submitting this form you agree that we may contact you about
                 IPv4 address services in accordance with our standard privacy
@@ -583,4 +638,3 @@ export default function Home() {
     </div>
   );
 }
-
