@@ -1,101 +1,10 @@
+import { Header } from "@/components/Header";
 import Image from "next/image";
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-[#f5f5f7] font-sans text-slate-900 flex flex-col">
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:px-0">
-          <a href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-auto px-2 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-              IPv4
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold tracking-tight">
-                Premium
-              </span>
-              <span className="text-[11px] text-slate-500">
-                Buy · Sell · Lease
-              </span>
-            </div>
-          </a>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
-            <a href="/about" className="hover:text-red-600">
-              About us
-            </a>
-            <div className="relative group">
-              <button className="flex items-center gap-1 hover:text-red-600">
-                <span>Services</span>
-                <span className="mt-0.5 text-xs">▾</span>
-              </button>
-              <div className="invisible absolute left-0 top-full mt-3 w-44 rounded-2xl border border-slate-200 bg-white py-2 text-sm shadow-xl opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                <a href="/buy-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy IPv4
-                </a>
-                <a href="/sell-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Sell IPv4
-                </a>
-                <a href="/lease-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Lease IPv4
-                </a>
-              </div>
-            </div>
-            <div className="relative group">
-              <button className="flex items-center gap-1 hover:text-red-600">
-                <span>RIR</span>
-                <span className="mt-0.5 text-xs">▾</span>
-              </button>
-              <div className="invisible absolute left-0 top-full mt-3 w-56 rounded-2xl border border-slate-200 bg-white py-2 text-sm shadow-xl opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                <a href="/buy-afrinic-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy AFRINIC IPV4
-                </a>
-                <a href="/buy-apnic-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy APNIC IPV4
-                </a>
-                <a href="/buy-arin-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy ARIN IPV4
-                </a>
-                <a href="/buy-lacnic-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy LACNIC IPV4
-                </a>
-                <a href="/buy-ripe-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy RIPE IPV4
-                </a>
-              </div>
-            </div>
-            <div className="relative group">
-              <button className="flex items-center gap-1 hover:text-red-600">
-                <span>Process</span>
-                <span className="mt-0.5 text-xs">▾</span>
-              </button>
-              <div className="invisible absolute left-0 top-full mt-3 w-60 rounded-2xl border border-slate-200 bg-white py-2 text-sm shadow-xl opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                <a href="/buy-ipv4-from-us" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buying IPv4 From Us
-                </a>
-                <a href="/sell-ipv4-to-us" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Selling IPv4 to Us
-                </a>
-                <a href="/lease-ipv4-from-us" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Leasing IPv4 From Us
-                </a>
-                <a href="/lease-ipv4-to-us" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Leasing IPv4 To Us
-                </a>
-              </div>
-            </div>
-            <a href="/contact" className="hover:text-red-600">
-              Contact
-            </a>
-          </nav>
-          <div className="flex items-center gap-3">
-            <a
-              href="/#contact"
-              className="inline-flex rounded-full bg-red-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-sm hover:bg-red-700"
-            >
-              Get in touch
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-1 pb-20">
         <section className="relative h-60 w-full overflow-hidden bg-slate-950 flex items-center justify-center">
@@ -243,7 +152,7 @@ export default function PrivacyPolicyPage() {
               IPv4Premium uses, processes, shares and discloses your information only on the need-to know-basis. In ordinary course of business, your information is used and processed through our system. However, in some cases, IPv4Premium may need to use and process your information on an individual basis. In such cases, IPv4Premium permits only trusted members of the staff who are legally bound by a valid agreement (i.e. non-disclosure agreement) to access and process your information.
             </p>
             <p className="mb-6 text-slate-700">
-              IPv4Premium discloses your information to any third party if it is reasonably required by the applicable laws of Canada or when IPv4Premium finds it appropriate to disclose your information to check fraudulent or illegal activities to protect our legitimate commercial interests. To the extent provided hereunder, IPv4Premium doesn’t share, transfer, sell, or lease your information with or to any third party.
+              IPv4Premium discloses your information to any third party if it is reasonably required by the applicable laws of London or when IPv4Premium finds it appropriate to disclose your information to check fraudulent or illegal activities to protect our legitimate commercial interests. To the extent provided hereunder, IPv4Premium doesn’t share, transfer, sell, or lease your information with or to any third party.
             </p>
 
             <h2 className="text-xl mt-10 mb-4">USES OF COOKIES</h2>
@@ -259,10 +168,10 @@ export default function PrivacyPolicyPage() {
 
             <h2 className="text-xl mt-10 mb-4">SECURITY, STORAGE AND TRANSFER:</h2>
             <p className="mb-4 text-slate-700">
-              This Website is hosted and operated from our facilities located in the Netherlands and are subject to the laws of the Netherlands. The Netherlands data protection laws provide strict data protection which is substantially equal to or more than that provided by the applicable laws of Canada. The hosting servers are owned and controlled by third party provider. Such third-party provider uses your information only to the extent necessary for the storage and doesn’t process, use and transfer the same for any other purposes.
+              This Website is hosted and operated from our facilities located in London and are subject to the laws of London. London data protection laws provide strict data protection which is substantially equal to or more than that provided by the applicable laws of London. The hosting servers are owned and controlled by third party provider. Such third-party provider uses your information only to the extent necessary for the storage and doesn’t process, use and transfer the same for any other purposes.
             </p>
             <p className="mb-4 text-slate-700">
-              In case at any stage, IPv4Premium needs to transfer your information from one third party providers to another or even from one jurisdiction to another jurisdiction, such transfer shall not be made to any jurisdiction the laws of which provide less protection to your information than that of Canada. If you are accessing this Website from EEC member countries and/or are resident thereof, you have special rights and privileges under the data protection laws devised by the European Union such as the General Data Protection Regulation (GDPR).
+              In case at any stage, IPv4Premium needs to transfer your information from one third party providers to another or even from one jurisdiction to another jurisdiction, such transfer shall not be made to any jurisdiction the laws of which provide less protection to your information than that of London. If you are accessing this Website from EEC member countries and/or are resident thereof, you have special rights and privileges under the data protection laws devised by the European Union such as the General Data Protection Regulation (GDPR).
             </p>
             <p className="mb-4 text-slate-700">
               IPv4Premium uses its best efforts and employs physical, administrative and technology-based measures and practices matching the industry standards to protect your information against any illegal and unauthorized access, breach, disclosure, misuse, alteration, theft, destruction, copy or process (“Illegal Access”). However, the transmission, processing and storage of data over the internet are not always 100% safe. IPv4Premium cannot guarantee that IPv4Premium is completely safe and secure. In case at any stage, your information becomes subject to Illegal Access by any third party or by accidental omission, you acknowledge that IPv4Premium is not responsible for any loss or damage caused by any such Illegal Access. The use of IPv4Premium involves risk to which you assume with full knowledge and consent.
@@ -298,10 +207,10 @@ export default function PrivacyPolicyPage() {
 
             <h2 className="text-xl mt-10 mb-4">GOVERNING LAWS AND DISPUTE RESOLUTION:</h2>
             <p className="mb-4 text-slate-700">
-              This Privacy Policy shall be governed by and construed in accordance with the Laws and Regulations of the province of Quebec, Canada.
+              This Privacy Policy shall be governed by and construed in accordance with the Laws and Regulations of London.
             </p>
             <p className="mb-6 text-slate-700">
-              You agree to not commence any proceedings against IPv4Premium in relation to any dispute without first giving us a formal notice, setting out the nature of the dispute and full particulars (“Dispute Notice”), together with relevant supporting documentation, provided the right to issue proceedings is not prejudiced by a delay. If such dispute is not amicably resolved between us within 10 Business Days, after receipt of the Dispute Notice, you shall be entitled to refer the dispute to the applicable courts of the province of Quebec, Canada.
+              You agree to not commence any proceedings against IPv4Premium in relation to any dispute without first giving us a formal notice, setting out the nature of the dispute and full particulars (“Dispute Notice”), together with relevant supporting documentation, provided the right to issue proceedings is not prejudiced by a delay. If such dispute is not amicably resolved between us within 10 Business Days, after receipt of the Dispute Notice, you shall be entitled to refer the dispute to the applicable courts of London.
             </p>
 
             <h2 className="text-xl mt-10 mb-4">NOTICE</h2>
@@ -316,19 +225,13 @@ export default function PrivacyPolicyPage() {
       <footer className="bg-slate-950 pb-8 pt-16 text-white w-full border-t border-slate-900 mt-auto">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 md:flex-row md:justify-between lg:px-0">
           <div className="flex flex-col items-start gap-4 md:max-w-xs">
-            <a href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-auto px-2 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-                IPv4
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="text-sm font-semibold tracking-tight text-white">
-                  Premium
-                </span>
-                <span className="text-[11px] text-slate-400">
-                  Buy · Sell · Lease
-                </span>
-              </div>
-            </a>
+            <a href="/" className="flex items-center gap-3">
+            <img src="/logo.png" alt="IPv4Premium" className="h-14 w-auto" />
+            <div className="flex flex-col justify-center">
+              <span className="text-2xl font-bold leading-none text-[#0f172a] tracking-tight">Premium</span>
+              <span className="text-[13px] font-medium text-slate-500 mt-0.5">Buy &middot; Sell &middot; Lease</span>
+            </div>
+          </a>
             <p className="text-sm text-slate-400">
               Your trusted partner for secure, compliant, and efficient IPv4
               address transactions globally.

@@ -1,4 +1,5 @@
 "use client";
+import { Header } from "@/components/Header";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -37,98 +38,7 @@ export default function SellingIPv4ToUsPage() {
 
   return (
     <div className="min-h-screen bg-[#f5f5f7] font-sans text-slate-900">
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:px-0">
-          <a href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-auto px-2 items-center justify-center rounded-xl bg-red-600 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-              IPv4
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold tracking-tight">Premium</span>
-              <span className="text-[11px] text-slate-500">Buy · Sell · Lease</span>
-            </div>
-          </a>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
-            <a href="/about" className="hover:text-red-600">
-              About us
-            </a>
-            <div className="relative group">
-              <button className="flex items-center gap-1 hover:text-red-600">
-                <span>Services</span>
-                <span className="mt-0.5 text-xs">▾</span>
-              </button>
-              <div className="invisible absolute left-0 top-full mt-3 w-44 rounded-2xl border border-slate-200 bg-white py-2 text-sm shadow-xl opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                <a href="/buy-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy IPv4
-                </a>
-                <a href="/sell-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Sell IPv4
-                </a>
-                <a href="/lease-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Lease IPv4
-                </a>
-                <a href="/sponsor-asn" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Sponsor ASN
-                </a>
-              </div>
-            </div>
-            <div className="relative group">
-              <button className="flex items-center gap-1 hover:text-red-600">
-                <span>RIR</span>
-                <span className="mt-0.5 text-xs">▾</span>
-              </button>
-              <div className="invisible absolute left-0 top-full mt-3 w-56 rounded-2xl border border-slate-200 bg-white py-2 text-sm shadow-xl opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                <a href="/buy-afrinic-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy AFRINIC IPV4
-                </a>
-                <a href="/buy-apnic-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy APNIC IPV4
-                </a>
-                <a href="/buy-arin-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy ARIN IPV4
-                </a>
-                <a href="/buy-lacnic-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy LACNIC IPV4
-                </a>
-                <a href="/buy-ripe-ipv4" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buy RIPE IPV4
-                </a>
-              </div>
-            </div>
-            <div className="relative group">
-              <button className="flex items-center gap-1 hover:text-red-600">
-                <span>Process</span>
-                <span className="mt-0.5 text-xs">▾</span>
-              </button>
-              <div className="invisible absolute left-0 top-full mt-3 w-60 rounded-2xl border border-slate-200 bg-white py-2 text-sm shadow-xl opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                <a href="/buy-ipv4-from-us" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Buying IPv4 From Us
-                </a>
-                <a href="/sell-ipv4-to-us" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Selling IPv4 to Us
-                </a>
-                <a href="/lease-ipv4-from-us" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Leasing IPv4 From Us
-                </a>
-                <a href="/lease-ipv4-to-us" className="block px-4 py-2 text-slate-800 hover:bg-slate-50">
-                  Leasing IPv4 To Us
-                </a>
-              </div>
-            </div>
-            <a href="/contact" className="hover:text-red-600">
-              Contact
-            </a>
-          </nav>
-          <div className="flex items-center gap-3">
-            <a
-              href="#contact"
-              className="inline-flex rounded-full bg-red-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-sm hover:bg-red-700"
-            >
-              Get in touch
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="pb-20">
         <section className="relative h-80 w-full overflow-hidden bg-slate-950">
